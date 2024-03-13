@@ -1,14 +1,17 @@
 language: ruby
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1
-  - jruby
-  - rbx-2
+  - 2.5
+  - 2.7
+  - 3.0
+  - jruby-9.2.16.0
 script: bundle exec rspec spec
 
 gemfile:
-  - gemfiles/Gemfile.activerecord-3.2.x
-  - gemfiles/Gemfile.activerecord-4.0.x
+  - gemfiles/Gemfile.activerecord-6.0.x
+  - gemfiles/Gemfile.activerecord-6.1.x
   - gemfiles/Gemfile.basic
-  - Gemfile
+
+matrix:
+  exclude:
+    - rvm: jruby
+      gemfile: gemfiles/Gemfile.activerecord-4.2.x

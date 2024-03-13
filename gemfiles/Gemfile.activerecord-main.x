@@ -1,11 +1,9 @@
 # A sample Gemfile
-source "https://rubygems.org"
-
-gemspec
+source "http://rubygems.org"
 
 group :test do
-  gem "rspec", "~> 3.0"
-  gem "activerecord", ">= 5.2.8.1"
+  gem "rspec"
+  gem "activerecord", git: "https://github.com/rails/rails.git", branch: "main"
   gem "sqlite3", :platform => [:ruby, :mswin, :mingw]
   gem "activerecord-jdbcsqlite3-adapter", :platform => :jruby
 end
